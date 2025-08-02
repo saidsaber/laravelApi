@@ -45,9 +45,9 @@ class UserController extends Controller
 
     public function logout(Request $request){
         // to delete the current token 
-        $request->user()->currentAccessToken()->delete();
+        // $request->user()->currentAccessToken()->delete();
         // to delete all tokens 
-        // $request->user()->tokens()->delete();
+        $request->user()->tokens()->delete();
         return ApiResponse::success(['message' => 'Logged out successfully']);
     }
 }
